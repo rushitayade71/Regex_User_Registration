@@ -53,7 +53,7 @@ public class User_Registration {
                 Boolean lastName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",User_Registration.lastName());
                 Boolean emailId =  Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}",User_Registration.emailId());
 		Boolean phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,User_Registration.phoneNum());
-		Boolean password = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z]).{8,}",User_Registration.password());
+		Boolean password = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}",User_Registration.password());
 
 
 		if(firstName == true)
