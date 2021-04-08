@@ -8,6 +8,7 @@ public class User_Registration {
 	static String lName;
 	static String email;
 	static String phNum;
+	static String pass;
 
 	static String firstName(){
 		Scanner sca1 = new Scanner(System.in);
@@ -37,6 +38,12 @@ public class User_Registration {
                 return phNum;
         }
 
+         static String password(){
+                Scanner sca5 = new Scanner(System.in);
+                System.out.println("Enter your Password contain atleast 8 Char : ");
+                pass = sca5.nextLine();
+                return pass;
+        }
 
 
 	public static void main(String args[]) {
@@ -46,6 +53,8 @@ public class User_Registration {
                 Boolean lastName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",User_Registration.lastName());
                 Boolean emailId =  Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}",User_Registration.emailId());
 		Boolean phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,User_Registration.phoneNum());
+		Boolean password = Pattern.matches(".{1,8}",User_Registration.password());
+
 
 		if(firstName == true)
 		{
@@ -87,6 +96,14 @@ public class User_Registration {
                         System.out.println("Incorrect format try '91 9856326741' this format");
                 }
 
+		if (password == true) 
+		{
+		System.out.println("Security Password: " + pass);
+                }
+                else
+		{
+			System.out.println("INvalid Password");
+		}
 
 	}
 }
