@@ -45,6 +45,11 @@ public class User_Registration {
                 return pass;
         }
 
+	 static void allEmailChecks(String a){
+		Boolean emailCheck = Pattern.matches("^(?!\\.)[A-Za-z0-9]+([._%+-]?[0-9])*@[A-Za-z0-9-]+\\.[a-zA-Z]{2,6}(\\.[A-Za-z]{2,6})?$",a);
+                System.out.println(emailCheck);
+        }
+
 
 	public static void main(String args[]) {
 		System.out.println("Welcome to User Registration Regex Problem");
@@ -52,7 +57,7 @@ public class User_Registration {
 		Boolean firstName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",User_Registration.firstName());
                 Boolean lastName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",User_Registration.lastName());
                 Boolean emailId =  Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}",User_Registration.emailId());
-		Boolean phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,User_Registration.phoneNum());
+		Boolean phoneNum = Pattern.matches("^\\d{10}$" ,User_Registration.phoneNum());
 		Boolean password = Pattern.matches("^(?=.*[@#$%^&-+=()])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}",User_Registration.password());
 
 
@@ -105,7 +110,32 @@ public class User_Registration {
 			System.out.println("INvalid Password");
 		}
 
+
+	allEmailChecks("abc@yahoo.com");
+	allEmailChecks("abc-100@yahoo.com");
+	allEmailChecks("abc.100@yahoo.com");
+	allEmailChecks("abc111@abc.com");
+	allEmailChecks("abc-100@abc.net");
+	allEmailChecks("abc.100@abc.com.au");
+	allEmailChecks("abc@1.com");
+	allEmailChecks("abc@gmail.com.com");
+	allEmailChecks("abc+100@gmail.com");
+
+	allEmailChecks("abc");
+	allEmailChecks("abc@.com.my");
+	allEmailChecks("abc123@gmail.a");
+	allEmailChecks("abc123@.com");
+	allEmailChecks("abc123@.com.com");
+	allEmailChecks(".abc@abc.com");
+	allEmailChecks("abc()*@gmail.com");
+	allEmailChecks("abc@%*.com");
+	allEmailChecks("abc..2002@gmail.com");
+	allEmailChecks("abc.@gmail.com");
+	allEmailChecks("abc@abc@gmail.com");
+	allEmailChecks("abc@gmail.com.1a");	
+	allEmailChecks("abc@gmail.com.aa.au");
+
+
 	}
 }
-
 
