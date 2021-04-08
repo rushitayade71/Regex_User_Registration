@@ -7,6 +7,7 @@ public class User_Registration {
 	static String fName;
 	static String lName;
 	static String email;
+	static String phNum;
 
 	static String firstName(){
 		Scanner sca1 = new Scanner(System.in);
@@ -29,6 +30,13 @@ public class User_Registration {
                 return email;
         }
 
+	 static String phoneNum(){
+                Scanner sca4 = new Scanner(System.in);
+                System.out.println("Enter your Phone Number : ");
+                phNum = sca4.nextLine();
+                return phNum;
+        }
+
 
 
 	public static void main(String args[]) {
@@ -37,6 +45,7 @@ public class User_Registration {
 		Boolean firstName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",User_Registration.firstName());
                 Boolean lastName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",User_Registration.lastName());
                 Boolean emailId =  Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}",User_Registration.emailId());
+		Boolean phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,User_Registration.phoneNum());
 
 		if(firstName == true)
 		{
@@ -66,6 +75,16 @@ public class User_Registration {
                  else
                 {
                         System.out.println("Incorrect format!");
+                }
+
+		if(phoneNum == true)
+                {
+                System.out.println("Phone Number: " + phNum);
+                        System.out.println("Correct format");
+                }
+                else
+                {
+                        System.out.println("Incorrect format try '91 9856326741' this format");
                 }
 
 
